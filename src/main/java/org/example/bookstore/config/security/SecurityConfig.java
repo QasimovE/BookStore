@@ -33,12 +33,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
-//        UserDetails user= User.builder()
-//                .username("ADMIN")
-//                .authorities("ROLE_ADMIN")
-//                .password(passwordEncoder().encode(password))
-//                .build();
+    public UserDetailsService userDetailsService(){            
         return myUserDetailsService;
     }
     @Bean
@@ -62,21 +57,7 @@ public class SecurityConfig {
                     registry.requestMatchers("/user/**").hasRole("USER");
                     registry.anyRequest().authenticated();
                 })
-//                .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-//    @Bean
-//    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
-//        http.authorizeHttpRequests((requests)->
-//                requests.requestMatchers("/h2-console/**").permitAll()
-//                        .anyRequest().authenticated());
-//        http.sessionManagement(session->
-//                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-//        http.httpBasic(Customizer.withDefaults());
-//        http.headers(headers->
-//                headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
-//        http.csrf(AbstractHttpConfigurer::disable);
-//        return http.build();
-//    }
 }
