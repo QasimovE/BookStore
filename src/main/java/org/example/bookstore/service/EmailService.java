@@ -15,8 +15,8 @@ public class EmailService {
 
     public void sendEmail(){
         SimpleMailMessage msg=new SimpleMailMessage();
-        msg.setFrom("iskndr640@gmail.com");
-        msg.setTo("eliw.qasimov176@gmail.com");
+        msg.setFrom("YOUR_EMAIL_FROM");
+        msg.setTo("YOUR_EMAIL_TO");
         msg.setSubject("Book");
         msg.setText("New Book");
         javaMailSender.send(msg);
