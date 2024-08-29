@@ -87,9 +87,6 @@ public class BookServiceTest {
         authorDto4=new AuthorDto("Sefa");
 
         bookDto3=new BookDto("Inal", authorDto, 0.0, 4);
-//
-
-
     }
 
 
@@ -191,48 +188,6 @@ public class BookServiceTest {
         Assertions.assertEquals(dtos, methodResponse);
     }
 
-//    @Test
-//    public void searchWithKeyWordTest(){
-//        String input = "some keyword";
-//        String totalRatings = "12345";
-//
-//        GoodReadsResponse mockResponse = mock(GoodReadsResponse.class);
-//        when(mockResponse.getTotalRatings()).thenReturn(totalRatings);
-//
-//        // Assuming the searchBook method returns a list
-//        when(goodReadsClient.searchBook("host", "key", input, "1"))
-//                .thenReturn(List.of(mockResponse));
-//
-//        // When
-//        String result = bookService.searchWithKeyWord(input);
-//
-//        // Then
-//        Assertions.assertEquals(totalRatings, result);
-////        var spy=Mockito.spy(bookService);
-//
-////        String host="host";
-////        String key="key";
-////        List<GoodReadsResponse> book5 = goodReadsClient.searchBook(host, key, "book", "1");
-////        String totalRatings = "123";
-////
-//////        goodReadsClient.searchBook("book");
-////        String string = spy.searchWithKeyWord(any());
-////        verify(bookService).searchWithKeyWord("book");
-////        String string1 = verify(bookService).searchWithKeyWord("book");
-////        Assertions.assertEquals(string,string1);
-//    }
-
-//    @Test
-//    public void getOrAddAuthorTest(){
-////        when(bookDto.getAuthor()).thenReturn(authorDto);
-//        when(authorRepository.findByFullName(authorDto.getFullName())).thenReturn(new Author());
-//        when(modelMapper.map(authorDto, Author.class)).thenReturn(author1);
-//        when(authorRepository.save(author1)).thenReturn(author1);
-//        Author author2 = bookService.getOrAddAuthor(bookDto);
-//        Assertions.assertNotNull(author1);
-//        Assertions.assertEquals(author2.getFullName(),"Inal");
-//
-//    }
 
 
     @Test
