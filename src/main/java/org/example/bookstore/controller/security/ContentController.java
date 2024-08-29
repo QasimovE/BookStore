@@ -38,19 +38,4 @@ public class ContentController {
     public String handleUserHome(){
         return "Welcome to USER home!";
     }
-
-//    @PostMapping("/authenticate")
-//    public String authenticateAndGetToken(@RequestBody LoginForm loginForm){
-//        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginForm.username(),loginForm.password()));
-//        if(authentication.isAuthenticated()){
-//            return jwtService.generateToken(myUserDetailsService.loadUserByUsername(loginForm.username()));
-//        } else{
-//            throw new UsernameNotFoundException("Invalid credentials");
-//        }
-//    }
-
-//    @PostMapping("/authenticate")
-//    public String authenticateAndGetToken(@RequestBody LoginForm loginForm){
-//        return contentService.authenticateAndGetToken(loginForm);
-//    }
 }
