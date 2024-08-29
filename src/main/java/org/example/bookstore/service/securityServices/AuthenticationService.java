@@ -42,12 +42,12 @@ public class AuthenticationService {
 
 
 
-    public LoginResponse authenticate(LoginForm form) throws UsernameNotFoundException{
+    public void authenticate(LoginForm form) throws UsernameNotFoundException{
         Authentication auth=authManager.authenticate(new UsernamePasswordAuthenticationToken(form.username(),form.password()));
         if(auth.isAuthenticated()){
             String token=jwtService.generateToken(userService.loadUserByUsername(form.username()));
             Long expiresIn=jwtService.getExpirationTime(token);
-            return new LoginResponse("success",token,expiresIn);
+            new LoginResponse("success",token,expiresIn);
         } else {
             throw new UsernameNotFoundException("User not found");
         }

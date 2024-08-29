@@ -27,8 +27,8 @@ public class AuthenticationController {
 //    }
 
     @PostMapping("/login")
-    public LoginResponse authenticate(@RequestBody LoginForm form) throws UsernameNotFoundException{
-      return authService.authenticate(form);
+    public void authenticate(@RequestBody LoginForm form) throws UsernameNotFoundException{
+       authService.authenticate(form);
     }
 
 

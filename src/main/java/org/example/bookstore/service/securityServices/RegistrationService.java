@@ -14,8 +14,9 @@ public class RegistrationService {
     private final MyUserRepository myUserRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public MyUser createUser(MyUser user){
+    public String createUser(MyUser user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return myUserRepository.save(user);
+         myUserRepository.save(user);
+         return "User created successfully";
     }
 }

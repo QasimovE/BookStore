@@ -26,7 +26,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
     private final MyUserDetailsService myUserDetailsService;
     private final JwtAuthFilter jwtAuthFilter;
-//    private String password="Inal_Sevinc";
 
     @Bean
     public PasswordEncoder passwordEncoder(){

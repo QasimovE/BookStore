@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @SecurityRequirement(name = "Bearer Authentication")
 public class ContentController {
-//    private  final AuthenticationManager authenticationManager;
-//    private  final JwtService jwtService;
-//    private  final MyUserDetailsService myUserDetailsService;
+    private  final AuthenticationManager authenticationManager;
+    private  final JwtService jwtService;
+    private  final MyUserDetailsService myUserDetailsService;
     private final ContentService contentService;
 
     @GetMapping("/home")
