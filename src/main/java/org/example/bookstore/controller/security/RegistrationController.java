@@ -19,20 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-//@RequestMapping("/register")
 public class RegistrationController {
-//    private final MyUserRepository myUserRepository;
-//    private final PasswordEncoder passwordEncoder;
     private final RegistrationService registrationService;
     private  final AuthenticationManager authenticationManager;
     private  final JwtService jwtService;
     private  final MyUserDetailsService myUserDetailsService;
 
-//    @PostMapping("/register/user")
-//    public MyUser createUser(@RequestBody MyUser user){
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        return myUserRepository.save(user);
-//    }
      @PostMapping("/register/user")
     public String createUser(@RequestBody MyUser user){
        return registrationService.createUser(user);
